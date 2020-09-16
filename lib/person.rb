@@ -62,9 +62,22 @@ class Person
         # I think this wants us to call the happiness function
         self.happiness=(self.happiness + 3)
         # but we don't need to in order to pass
-        friend.happiness += 3
+        friend.happiness=(friend.happiness + 3)
         "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
 
+    def start_conversation(friend, topic)
+        if topic == "politics"
+            self.happiness=(self.happiness - 2)
+            friend.happiness=(friend.happiness - 2)
+            p "blah blah partisan blah lobbyist"
+        elsif topic == "weather"
+            self.happiness=(self.happiness + 1)
+            friend.happiness=(friend.happiness + 1)
+            p "blah blah sun blah rain"
+        else
+            p "blah blah blah blah blah"
+        end
     end
 
 end
